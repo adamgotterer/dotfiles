@@ -1,0 +1,19 @@
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo "✌️ DNS flushed"'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+alias ls="ls --color=auto"
+alias ll="ls --color=auto -l"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias vim="vim"
+alias vi="vim"
+alias git="hub"
+
+alias tmux='tmux -2'

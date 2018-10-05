@@ -1,0 +1,8 @@
+for file in ~/.{exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+if [ -f ~/.bash_local ]; then
+  source ~/.bash_local
+fi

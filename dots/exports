@@ -1,0 +1,31 @@
+# VIM everywhere
+export EDITOR=vim
+export VISUAL="$EDITOR"
+
+# UTF-8 everywhere
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Setup Python
+PYTHONSTARTUP=~/.pythonrc.py
+export PYTHONSTARTUP
+
+# Setup GO
+export GOROOT=/usr/local/go
+export GOPATH=~/sites/gospace
+
+# Rbenv setup
+export RBENV_ROOT="$HOME/.rbenv"
+export RBENV_BUILD_ROOT="$RBENV_ROOT/sources"
+# add ruby gems/rbenv shims to PATH
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Save all bash history
+export HISTSIZE=1000000
+export HISTCONTROL=ignoreboth
+shopt -s histappend
+export PROMPT_COMMAND="$PROMPT_COMMAND history -a; history -n"
+
+# osX color terminal
+export CLICOLOR=1

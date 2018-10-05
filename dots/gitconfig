@@ -1,0 +1,45 @@
+[user]
+    name = Adam Gotterer
+    email = agotterer@gmail.com
+    signingkey = 080BD19717C95A1889F2D7A50BECFC9BDA7A8EF7
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[push]
+    default = simple
+
+[core]
+    editor = /usr/local/bin/nvim
+    quotepath = false
+    pager = diff-so-fancy | less --tabs=1,5 -R
+    excludesfile = ~/.gitignore_global
+    whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+
+[apply]
+	whitespace = fix
+
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hash = log --pretty=format:'%h' -n 1  
+    prune = fetch --prune
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
+    staged = "diff --staged"
+
+[status]
+    showUntrackedFiles = all
+
+[transfer]
+    fsckobjects = true
+
+[pull]
+    rebase = true
+
+[commit]
+    gpgsign = true
+
+[gpg]
+	program = gpg
