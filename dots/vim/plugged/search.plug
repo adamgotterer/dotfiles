@@ -1,0 +1,8 @@
+Plug 'mileszs/ack.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'justinmk/vim-sneak'
+Plug 'henrik/vim-indexed-search'
+Plug 'nelstrom/vim-visual-star-search'

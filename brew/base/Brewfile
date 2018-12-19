@@ -30,6 +30,7 @@ brew "exa"
 brew "fd"
 brew "findutils"
 brew "fpp"
+brew "fzf"
 brew "git"
 brew "gist"
 brew "gnu-sed", args: ["with-default-names"]
@@ -95,9 +96,10 @@ cask "sublime-text"
 cask "taskexplorer"
 cask "the-unarchiver"
 cask "vlc"
+cask "yubikey-neo-manager"
 
-mas "CopyClip", id: 595191960
-mas "iA Writer", id: 775737590
-mas "Todoist", id: 585829637
-mas "Xcode", id: 497799835
-mas "Slack", id: 803453959
+#mas "CopyClip", id: 595191960
+#mas "iA Writer", id: 775737590
+#mas "Todoist", id: 585829637
+#mas "Xcode", id: 497799835
+#mas "Slack", id: 803453959

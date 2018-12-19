@@ -1,0 +1,132 @@
+" proper control character: X 
+
+set nocompatible 				" don't be compatible with vi
+
+" Load plugin path
+if filereadable(expand("~/.vim/plug.vim"))
+  source ~/.vim/plug.vim
+endif
+
+filetype plugin indent on
+set nowrap                  	 " don't wrap text
+set formatoptions=l wrapmargin=0 " don't break text to a new line when it reaches the textwidth
+set textwidth=110           	 " Show a visual marker at 100 characters
+set colorcolumn=+0          	 " Set a visual marker at 100 characters
+set linebreak               	 " don't wrap textin the middle of a word
+set autoindent              	 " always set autoindenting on
+set tabstop=4               	 " <tab> inserts spaces
+set shiftwidth=4            	 " indent level
+set softtabstop=4          	     " <BS> over an autoindent deletes both spaces.
+set expandtab              		 " Use spaces, not tabs, for autoindent/tab key.
+set shiftround             		 " rounds indent to a multiple of shiftwidth
+set matchpairs+=<:>       		 " show matching <> (html mainly) as well
+set lazyredraw
+set ttyfast
+set backupcopy=yes          	 " Needed to get proper user ownership and syncing to Docker for things like gaurd
+set backspace=indent,eol,start
+set path=.,,** 					 " Always set the path to the current files directory
+set showmatch					 " Don't scroll the screen when matching brackets
+set incsearch					 " Highlight search terms dynamically as they are typed
+set hlsearch					 " Highlight search terms
+set ignorecase
+set smartcase
+set virtualedit=all
+set bs=2
+set hidden
+nnoremap ' `
+nnoremap ` '
+set history=1000
+set wildmenu
+set wildmode=longest,list,full
+set scrolloff=3
+set ruler
+syntax on
+set listchars=tab:>-,trail:?,eol:$
+set scrolloff=3
+set listchars=tab:>-,trail:?,eol:$
+set mouse=nicr					 " Enable mouse control in normal mode
+nnoremap <leader>gd <S-k>		 " Remap definition lookup since its fat fingered when navigating splits a lot
+
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+set cursorline
+
+" Bind capital W to write
+command! W :w
+"
+" Bind capital Q to quit
+command! Q :q
+
+" Sudo write
+cmap W! w !sudo tee % >/dev/null
+
+" Disable Macvim toolbar
+if has("gui_running")
+    set guioptions=-t
+endif
+
+" Run checktime in buffers to see if the file timestamp has changed (forces
+" relaod prompt
+augroup buffer_check
+  au!
+  au CursorHold * if getcmdwintype() == '' | checktime | endif
+  au CursorHoldI * if getcmdwintype() == '' | checktime | endif
+  au BufEnter * if getcmdwintype() == '' | checktime | endif
+  au CursorMoved * if getcmdwintype() == '' | checktime | endif
+  au CursorMovedI * if getcmdwintype() == '' | checktime | endif
+augroup END
+
+" Wrap toggling
+nmap <Leader>w :set wrap!<cr>
+nmap <Leader>W :set nowrap<cr>
+
+" Move a line of text up or down
+" The is a hack to get alt to correctly map
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
+
+" Resize current buffer by +/- 5
+nnoremap <leader>h :vertical resize -5<cr>
+nnoremap <leader>j :resize +5<cr>
+nnoremap <leader>k :resize -5<cr>
+nnoremap <leader>l :vertical resize +5<cr>
+
+" Cleaner split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Split panes to the right and bottom (feels more natural)
+set splitbelow
+set splitright
+
+if !isdirectory(expand("~/.vim/.backupdir/"))
+    silent !echo "Creating backup dir..."
+    silent !mkdir -p ~/.vim/.backupdir
+endif
+
+if !isdirectory(expand("~/.vim/.swap/"))
+    silent !echo "Creating swap dir..."
+    silent !mkdir -p ~/.vim/.swap
+endif
+
+if !isdirectory(expand("~/.vim/.undo/"))
+    silent !echo "Creating undo dir..."
+    silent !mkdir -p ~/.vim/.undo
+endif
+
+set backupdir^=~/.vim/.backupdir//
+set directory^=~/.vim/.swap//                " where to put swap files
+set undodir^=~/.vim/.undo//                  " where to put undo files
+
+
+" Resize the quick fix window
+augroup quickfixheight
+  autocmd!
+  autocmd FileType qf 20wincmd _
+augroup END

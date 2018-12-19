@@ -1,0 +1,4 @@
+Plug 'tpope/vim-sleuth'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-obsession'

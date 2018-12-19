@@ -6,6 +6,20 @@ Sets up the minimum requirements to install everything else in this repo
 
 `sh bootstrap.sh`
 
+## Install
+
+### Sync to home directory
+```
+cd path/to/dotfiles
+rcup -d $(pwd)/dots
+```
+
+### Install brew apps
+```
+cd path/to/dotfiles/brew/base
+brew bundle
+```
+
 # Configure
 
 ## Hub (for git)

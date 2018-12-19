@@ -1,0 +1,2 @@
+Plug 'kevinw/pyflakes-vim'
+Plug 'nvie/vim-flake8'
