@@ -1,5 +1,5 @@
 Plug 'kana/vim-textobj-function'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'coderifous/textobj-word-column.vim'
-Plug 'thinca/vim-textobj-function-javascript'
 Plug 'wellle/targets.vim'
+Plug 'kana/vim-textobj-user'

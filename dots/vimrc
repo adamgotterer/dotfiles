@@ -130,3 +130,5 @@ augroup quickfixheight
   autocmd!
   autocmd FileType qf 20wincmd _
 augroup END
+
+so ~/.vim/settings.vim
