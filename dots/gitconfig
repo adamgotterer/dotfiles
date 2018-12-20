@@ -1,7 +1,6 @@
 [user]
     name = Adam Gotterer
     email = agotterer@gmail.com
-    signingkey = 080BD19717C95A1889F2D7A50BECFC9BDA7A8EF7
 
 [color]
     diff = auto

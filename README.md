@@ -25,6 +25,12 @@ brew bundle
 ## Git
 For local configuration settings create ~/.gitconfig.local
 
+```
+[user]
+    email = 
+    signingkey =
+```
+
 ## Hub (for git)
 [https://github.com/github/hub](https://github.com/github/hub)
 
