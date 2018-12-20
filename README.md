@@ -22,6 +22,9 @@ brew bundle
 
 # Configure
 
+## Git
+For local configuration settings create ~/.gitconfig.local
+
 ## Hub (for git)
 [https://github.com/github/hub](https://github.com/github/hub)
 
