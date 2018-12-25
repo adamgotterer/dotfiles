@@ -24,7 +24,6 @@ eval "$(rbenv init -)"
 # Save all bash history
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth
-shopt -s histappend
 export PROMPT_COMMAND="$PROMPT_COMMAND history -a; history -n"
 
 # osX color terminal
