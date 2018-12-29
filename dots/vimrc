@@ -46,6 +46,7 @@ set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 set mouse=nicr					 " Enable mouse control in normal mode
 nnoremap <leader>gd <S-k>		 " Remap definition lookup since its fat fingered when navigating splits a lot
+set number                       " Show line numbers
 
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
