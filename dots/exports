@@ -21,6 +21,9 @@ export RBENV_BUILD_ROOT="$RBENV_ROOT/sources"
 export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Pyenv setup
+eval "$(pyenv init -)"
+
 # Save all bash history
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth
