@@ -39,6 +39,7 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=.vagrant
+--ignore-dir=vendor
 
 --ignore-file=ext:pg_dump
 --ignore-file=ext:csv
