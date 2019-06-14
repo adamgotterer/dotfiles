@@ -1,6 +1,7 @@
 [user]
     name = Adam Gotterer
     email = agotterer@gmail.com
+    signingkey = D2BA2C206F980E95
 
 [color]
     diff = auto
@@ -18,7 +19,7 @@
     whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 
 [apply]
-	whitespace = fix
+    whitespace = fix
 
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -36,13 +37,11 @@
 
 [pull]
     rebase = true
-
-[commit]
-    gpgsign = true
-
 [gpg]
-	program = gpg
+    program = /usr/local/MacGPG2/bin/gpg2
 
 [include]
     path = ~/.gitconfig.local
 
+[commit]
+    gpgsign = true
