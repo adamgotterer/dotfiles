@@ -108,8 +108,8 @@ nnoremap <Leader>O O<Esc>
 " Insert pry debugging session
 augroup ruby
   au!
-  au FileType ruby nnoremap <buffer> gy orequire 'pry'; binding.pry<ESC>^
-  au FileType ruby nnoremap <buffer> gY Orequire 'pry'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gy orequire 'pry-byebug'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gY Orequire 'pry-byebug'; binding.pry<ESC>^
 augroup END
 
 " Split panes to the right and bottom (feels more natural)
