@@ -12,5 +12,6 @@ runtime languages.plug
 runtime python.plug
 runtime search.plug
 runtime vim-improvements.plug
+runtime editing.plug
 
 call plug#end()

@@ -3,3 +3,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'zhou13/vim-easyescape'
+
+" Fix altkey mapping
+Plug 'drmikehenry/vim-fixkey'
