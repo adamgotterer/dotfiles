@@ -1,4 +1,4 @@
-" proper control character: X 
+" proper control character: X
 
 set nocompatible 				" don't be compatible with vi
 
@@ -82,7 +82,6 @@ nmap <Leader>w :set wrap!<cr>
 nmap <Leader>W :set nowrap<cr>
 
 " Move a line of text up or down
-" The is a hack to get alt to correctly map
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
 inoremap <A-j> <Esc>:m+<CR>==gi
@@ -105,6 +104,13 @@ nnoremap <C-H> <C-W><C-H>
 " Insert a new line in visual mode
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
+
+" Insert pry debugging session
+augroup ruby
+  au!
+  au FileType ruby nnoremap <buffer> gy orequire 'pry'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gY Orequire 'pry'; binding.pry<ESC>^
+augroup END
 
 " Split panes to the right and bottom (feels more natural)
 set splitbelow
