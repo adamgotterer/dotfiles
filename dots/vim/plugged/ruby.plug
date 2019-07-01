@@ -1,3 +1,4 @@
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'keith/rspec.vim'
