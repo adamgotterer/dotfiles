@@ -60,21 +60,25 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1881 120 584 364 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1263 48 400 129 0 0 1680 1027 </string>
+	<string>1263 55 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 484 620 392 0 0 1680 1027 </string>
+	<string>970 786 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 128 606 469 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>335 379 918 423 0 0 1680 1027 </string>
+	<string>3141 546 796 486 2560 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 940 665 477 0 0 2560 1417 </string>
+	<string>758 940 665 477 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1176 531 817 693 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>171 284 665 477 0 0 2560 1417 </string>
+	<string>52 55 1425 972 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>385 135 585 452 0 0 1680 1027 </string>
+	<string>263 516 665 477 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>153 226 929 801 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>351 237 777 495 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -258,6 +262,8 @@
 				<key>Red Component</key>
 				<real>0.79607843137254897</real>
 			</dict>
+			<key>Application Keypad Allowed</key>
+			<true/>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
@@ -948,7 +954,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-08T17:42:19Z</date>
+	<date>2019-06-28T22:34:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
@@ -958,6 +964,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.9</string>
 </dict>
 </plist>
