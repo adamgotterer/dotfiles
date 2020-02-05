@@ -37,3 +37,6 @@ export CLICOLOR=1
 
 # Brew sbin path
 export PATH="/usr/local/sbin:$PATH"
+
+# Prevent a default heroku app
+export HEROKU_APP=**NONE**
