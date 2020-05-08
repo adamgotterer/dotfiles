@@ -40,3 +40,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Prevent a default heroku app
 export HEROKU_APP=**NONE**
+
+# Set FZF defaut to fd
+#  addresses an issue with fzf.vim not respecting .gitignore in search results
+export FZF_DEFAULT_COMMAND='fd'
