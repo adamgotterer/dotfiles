@@ -38,23 +38,26 @@ For local configuration settings create ~/.gitconfig.local
 # Tools
 Some tools that are installed
 
+### cheat
+Manage command line cheat cheats
+[https://github.com/chrisallenlane/cheat](https://github.com/chrisallenlane/cheat)
+
+### fd
+Search alternative to `find`
+[https://github.com/sharkdp/fd/](https://github.com/sharkdp/fd/)
+
+### fpp
+[https://facebook.github.io/PathPicker/](https://facebook.github.io/PathPicker/)
+PathPicker from things like git, grep, searches, really anything
+
 ### fuck
 [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
 Automatically correct command line typos
 
-### fpp
-[https://facebook.github.io/PathPicker/](https://facebook.github.io/PathPicker/)
+### NCDU
+[https://dev.yorhel.nl/ncdu](https://dev.yorhel.nl/ncdu)
+Alternative to `du` for recursively analyzing disk usage
 
-PathPicker from things like git, grep, searches, really anything
-
-### hub
-[https://github.com/github/hub](https://github.com/github/hub)
-
-Command line tool that wraps git in order to extend it with extra features and commands that make
-working with GitHub easier
-
-Note: See configuration section
-
-### cheat
-Manage command line cheat cheats
-[https://github.com/chrisallenlane/cheat](https://github.com/chrisallenlane/cheat)
+### tldr
+[https://tldr.sh](https://tldr.sh)
+Simplified and community-driven man pages

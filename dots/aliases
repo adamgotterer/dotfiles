@@ -10,7 +10,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias vim="vim"
-alias vi="vim"
+alias cat='bat'
+
+alias vim='vim'
+alias vi='vim'
 
 alias tmux='tmux -2'
