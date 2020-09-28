@@ -12,6 +12,5 @@ alias egrep='egrep --color=auto'
 
 alias vim="vim"
 alias vi="vim"
-alias git="hub"
 
 alias tmux='tmux -2'

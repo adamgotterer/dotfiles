@@ -1,1 +1,2 @@
 eval "$(thefuck --alias)"
+$(heroku autocomplete:script bash)

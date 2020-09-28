@@ -31,11 +31,6 @@ For local configuration settings create ~/.gitconfig.local
     signingkey =
 ```
 
-## Hub (for git)
-[https://github.com/github/hub](https://github.com/github/hub)
-
-`sh configure/hub_cli.sh`
-
 ## SSH
 
 `sh configure/ssh.sh`
