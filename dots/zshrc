@@ -1,0 +1,85 @@
+export ZSH="/Users/$USER/.oh-my-zsh"
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+plugins=(
+    aws
+    heroku
+    colored-man-pages
+    docker
+    fast-syntax-highlighting
+    git
+    golang
+    httpie
+    terraform
+    tmux
+    vi-mode
+    z # https://github.com/agkozak/zsh-z
+    zsh-completions
+    fzf-tab # fzf-tab should be the last plugin to bind "^I"
+)
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Load source files
+for file in ~/.{exports,aliases,functions,extra,.oh-my-zsh/oh-my-zsh}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# Load local overrides and settings
+if [ -f ~/.zsh_local ]; then
+  source ~/.zsh_local
+fi
+
+# Load oh-my-zsh
+source "${ZSH}/oh-my-zsh.sh"
+
+# Add more dirs to PATH
+if [[ ! "$PATH" == *:.* ]]; then
+    export PATH="${PATH}:${HOME}/.bin:."
+fi
+
+# Only display targets tag for make command completion
+zstyle ':completion:*:*:make::' tag-order 'targets variables'
+
+# Reload the completions (uncomment if zsh-completions don't work)
+# autoload -U compinit && compinit
+
+# Add skaffold autocompletions
+if [ $commands[skaffold] ]; then
+    source <(skaffold completion zsh)
+fi
+
+# fzf-tab settings
+local extract="
+# trim input(what you select)
+local in=\${\${\"\$(<{f})\"%\$'\0'*}#*\$'\0'}
+# get ctxt for current completion(some thing before or after the current word)
+local -A ctxt=(\"\${(@ps:\2:)CTXT}\")
+# real path
+local realpath=\${ctxt[IPREFIX]}\${ctxt[hpre]}\$in
+realpath=\${(Qe)~realpath}
+"
+# The preview command used by fzf-tab (show file or directory contents on completion)
+zstyle ':fzf-tab:complete:*:*' extra-opts --preview=$extract'(bat --color=always --pager=never ${realpath} || colorls --color=always --long -A --sort-dirs --git-status ${realpath}) 2>/dev/null'
+
+# Whether to automatically insert a space after the result.
+zstyle ':fzf-tab:*' insert-space false
+
+test -f ~/.fzf.zsh && source ~/.fzf.zsh
+
+setopt ALWAYS_TO_END           # full completions move cursor to the end
+setopt AUTO_PARAM_SLASH        # if completed parameter is a directory, add a trailing slash
+setopt COMPLETE_IN_WORD        # complete from the cursor rather than from the end of the word
+setopt INTERACTIVE_COMMENTS    # allow comments in command line
+setopt NO_BG_NICE              # don't nice background jobs
+setopt correct                 # Correct typos
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

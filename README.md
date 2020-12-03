@@ -14,6 +14,9 @@ cd path/to/dotfiles
 rcup -d $(pwd)/dots
 ```
 
+### Configure ZSH
+`bash scripts/ohmyzsh.sh`
+
 ### Install brew apps
 ```
 cd path/to/dotfiles/brew/base
@@ -49,10 +52,6 @@ Search alternative to `find`
 ### fpp
 [https://facebook.github.io/PathPicker/](https://facebook.github.io/PathPicker/)
 PathPicker from things like git, grep, searches, really anything
-
-### fuck
-[https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
-Automatically correct command line typos
 
 ### NCDU
 [https://dev.yorhel.nl/ncdu](https://dev.yorhel.nl/ncdu)
