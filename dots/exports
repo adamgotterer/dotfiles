@@ -55,3 +55,5 @@ export FZF_DEFAULT_OPTS=${FZF_DEFAULT_OPTS}'
 # COnfigure BAT
 export BAT_STYLE="header,numbers,changes"
 export BAT_THEME="ansi-dark"
+
+export GPG_TTY=$(tty)
