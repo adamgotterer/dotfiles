@@ -1,0 +1,10 @@
+--recurse=yes
+--exclude=.git
+--exclude=.svn
+--exclude=vendor/*
+--exclude=node_modules/*
+--exclude=\*.swp
+--exclude=\*.bak
+--exclude=\*.pyc
+--exclude=db/*
+--exclude=log/*
