@@ -6,7 +6,7 @@ let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_ruby_rubocop_args='--display-cop-names'
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+"let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0

@@ -1,3 +1,4 @@
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx'
+Plug 'neoclide/vim-jsx-improve'
