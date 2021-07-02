@@ -41,7 +41,7 @@ export HEROKU_APP=**NONE**
 
 # Set FZF defaut to fd
 #  addresses an issue with fzf.vim not respecting .gitignore in search results
-export FZF_DEFAULT_COMMAND='fd'
+export FZF_DEFAULT_COMMAND='fd --hidden --ignore-case --no-ignore-vcs'
 
 # Configure FZF
 export FZF_DEFAULT_OPTS="--bind 'ctrl-v:execute(vim {})+abort,ctrl-p:toggle-preview' --layout=reverse --tiebreak=index --cycle --preview-window noborder"
