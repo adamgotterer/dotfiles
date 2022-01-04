@@ -1,8 +1,7 @@
-" Plug 'bling/vim-airline'
-
 Plug 'itchyny/lightline.vim'
 Plug 'glittershark/vim-colors-solarized'
 Plug 'wesQ3/vim-windowswap'
 Plug 'troydm/zoomwintab.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'chrisbra/Colorizer'
+Plug 'Yggdroot/indentLine'

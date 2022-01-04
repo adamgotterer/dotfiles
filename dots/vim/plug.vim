@@ -6,6 +6,7 @@ runtime appearance.plug
 runtime javascript.plug
 runtime programming.plug
 runtime ruby.plug
+runtime go.plug
 runtime textobjects.plug
 runtime git.plug
 runtime languages.plug

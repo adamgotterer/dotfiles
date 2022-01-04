@@ -113,6 +113,9 @@ augroup ruby
   au FileType ruby nnoremap <buffer> gY Orequire 'pry-byebug'; binding.pry<ESC>^
 augroup END
 
+" Insert visual debugging output
+iab wtf puts "#" * 90<c-m>puts <c-m>puts "#" * 90<esc>
+
 " Split panes to the right and bottom (feels more natural)
 set splitbelow
 set splitright
@@ -135,7 +138,6 @@ endif
 set backupdir^=~/.vim/.backupdir//
 set directory^=~/.vim/.swap//                " where to put swap files
 set undodir^=~/.vim/.undo//                  " where to put undo files
-
 
 " Resize the quick fix window
 augroup quickfixheight

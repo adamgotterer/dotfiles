@@ -1,5 +1,3 @@
-export ZSH="/Users/$USER/.oh-my-zsh"
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -84,8 +82,34 @@ setopt correct                 # Correct typos
 bindkey "^[f" forward-word
 bindkey '^[b' backward-word
 
+# Prevent ctrl-d from exiting the terminal
+unsetopt ignoreeof
+
+# Make meta-delete behave like bash
+x-bash-backward-kill-word(){
+    WORDCHARS='' zle backward-kill-word
+
+}
+zle -N x-bash-backward-kill-word
+bindkey '^W' x-bash-backward-kill-word
+
+x-backward-kill-word(){
+    WORDCHARS='*?_-[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
+}
+zle -N x-backward-kill-word
+bindkey '\e^?' x-backward-kill-word
+
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+# Don't share history
+setopt noincappendhistory
+setopt nosharehistory
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
