@@ -16,7 +16,7 @@ plugins=(
     httpie
     terraform
     tmux
-    vi-mode
+    #vi-mode
     z # https://github.com/agkozak/zsh-z
     zsh-completions
     fzf-tab # fzf-tab should be the last plugin to bind "^I"
@@ -36,7 +36,7 @@ if [ -f ~/.zsh_local ]; then
 fi
 
 # Load oh-my-zsh
-source "${ZSH}/oh-my-zsh.sh"
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # Add more dirs to PATH
 if [[ ! "$PATH" == *:.* ]]; then
@@ -106,10 +106,11 @@ KEYTIMEOUT=1
 setopt noincappendhistory
 setopt nosharehistory
 
+#bindkey -M viins '\e.' insert-last-word
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
