@@ -3,7 +3,6 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
-alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo "✌️ DNS flushed"'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias grep='grep --color=auto'
