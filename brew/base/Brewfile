@@ -67,6 +67,7 @@ brew "trash"
 brew "tree"
 brew "vim"
 brew "wifi-password"
+brew "flake8"
 
 cask "java"
 cask "1password"

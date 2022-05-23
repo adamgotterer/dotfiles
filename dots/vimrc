@@ -145,4 +145,7 @@ augroup quickfixheight
   autocmd FileType qf 20wincmd _
 augroup END
 
+" Use python3 interpreter
+let g:pymode_python = 'python3'
+
 so ~/.vim/settings.vim
