@@ -113,6 +113,13 @@ augroup ruby
   au FileType ruby nnoremap <buffer> gY Orequire 'pry-byebug'; binding.pry<ESC>^
 augroup END
 
+" Insert pry debugging session
+augroup go
+  au!
+  au FileType go nnoremap <buffer> gy oruntime.Breakpoint()<ESC>^
+  au FileType go nnoremap <buffer> gY Oruntime.Breakpoint()<ESC>^
+augroup END
+
 " Insert visual debugging output
 iab wtf puts "#" * 90<c-m>puts <c-m>puts "#" * 90<esc>
 
@@ -147,5 +154,12 @@ augroup END
 
 " Use python3 interpreter
 let g:pymode_python = 'python3'
+
+" The indentLine plugin is changing the conceal level
+" which messes up how JSON and Markdown files look
+" https://vi.stackexchange.com/questions/7258/how-do-i-prevent-vim-from-hiding-symbols-in-markdown-and-json
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 so ~/.vim/settings.vim
