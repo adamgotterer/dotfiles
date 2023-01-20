@@ -21,6 +21,9 @@ rcup -d $(pwd)/dots
 ```
 cd path/to/dotfiles/brew/base
 brew bundle
+
+### Improve the quality of the MacOS spellchecker
+sh scripts/spelling.sh
 ```
 
 # Configure
