@@ -1,7 +1,7 @@
 [user]
     name = Adam Gotterer
     email = agotterer@gmail.com
-    signingkey = D2BA2C206F980E95
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILhNCeuE+Q9EjwZrkBXN02OoVSjkFaFi7TAsgVniFwmc
 
 [color]
     diff = auto
@@ -39,9 +39,12 @@
     rebase = true
 [gpg]
     program = /usr/local/MacGPG2/bin/gpg2
+	format = ssh
 
 [include]
     path = ~/.gitconfig.local
 
 [commit]
     gpgsign = true
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
