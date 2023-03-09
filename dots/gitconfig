@@ -1,7 +1,7 @@
 [user]
     name = Adam Gotterer
     email = agotterer@gmail.com
-	signingkey = AD25BFE9DA7545DA
+    signingkey = AD25BFE9DA7545DA
 
 [color]
     diff = auto
@@ -23,7 +23,7 @@
 
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    hash = log --pretty=format:'%h' -n 1  
+    hash = log --pretty=format:'%h' -n 1
     prune = fetch --prune
     undo = reset --soft HEAD^
     stash-all = stash save --include-untracked
@@ -38,8 +38,7 @@
 [pull]
     rebase = true
 [gpg]
-    program = /usr/local/MacGPG2/bin/gpg2
-	format = ssh
+    program = /usr/local/bin/gpg
 
 [include]
     path = ~/.gitconfig.local
