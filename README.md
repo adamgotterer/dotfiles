@@ -41,6 +41,11 @@ For local configuration settings create ~/.gitconfig.local
 
 `sh configure/ssh.sh`
 
+## Iterm2 Preferences
+Go to preferences -> general -> Preferences
+Check "Load preferences from a custom folder or URL"
+Change the folder to Dotfiles/iterm
+
 # Tools
 Some tools that are installed
 

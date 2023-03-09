@@ -1,1 +1,2 @@
 Plug 'sebdah/vim-delve'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

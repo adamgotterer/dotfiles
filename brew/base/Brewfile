@@ -28,6 +28,7 @@ brew "fd"
 brew "findutils"
 brew "fpp"
 brew "fzf"
+brew "go"
 brew "gist"
 brew "gnu-sed", args: ["with-default-names"]
 brew "jq"
