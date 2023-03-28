@@ -162,6 +162,16 @@ let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
+function! MyHighlights() abort
+    highlight Visual     cterm=NONE ctermbg=117  ctermfg=16  gui=NONE guibg=#5fd700 guifg=#000000
+    highlight NonText    cterm=NONE ctermbg=NONE  gui=NONE guibg=#00005f
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+
 colorscheme seti
 
 so ~/.vim/settings.vim
