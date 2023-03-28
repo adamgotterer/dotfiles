@@ -163,8 +163,14 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
 function! MyHighlights() abort
-    highlight Visual     cterm=NONE ctermbg=117  ctermfg=16  gui=NONE guibg=#5fd700 guifg=#000000
-    highlight NonText    cterm=NONE ctermbg=NONE  gui=NONE guibg=#00005f
+    " Selection Highlight
+    highlight Visual     cterm=NONE ctermbg=117 ctermfg=16 gui=NONE guibg=#5fd700 guifg=#000000
+
+    " Background color in the section after the text ends
+    highlight NonText    cterm=NONE ctermbg=NONE gui=NONE guibg=#00005f
+
+    " Search word highlight
+    hi Search            cterm=NONE ctermbg=yellow ctermfg=16 guifg=NONE guibg=NONE gui=underline
 endfunction
 
 augroup MyColors
