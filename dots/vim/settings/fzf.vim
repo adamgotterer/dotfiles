@@ -1,1 +1,1 @@
-nnoremap <C-p> :Files<Cr>
+nnoremap <C-p> :GFiles --cached --others --exclude-standard<Cr>
