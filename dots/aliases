@@ -17,3 +17,5 @@ alias vi='vim'
 alias tmux='tmux -2'
 
 alias ls="exa"
+
+alias python="python3"
