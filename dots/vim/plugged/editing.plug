@@ -1,4 +1,4 @@
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'adelarsq/vim-matchit'
 Plug 'AndrewRadev/splitjoin.vim'
