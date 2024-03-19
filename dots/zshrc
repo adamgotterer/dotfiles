@@ -49,6 +49,9 @@ fi
 # Only display targets tag for make command completion
 zstyle ':completion:*:*:make::' tag-order 'targets variables'
 
+# Enable the ssh-agent plugin and bypass the Powerline10k prompt warnings
+zstyle :omz:plugins:ssh-agent quiet yes lazy yes agent-forwarding on
+
 # Reload the completions (uncomment if zsh-completions don't work)
 # autoload -U compinit && compinit
 
