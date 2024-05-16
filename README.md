@@ -26,6 +26,13 @@ brew bundle
 sh scripts/spelling.sh
 ```
 
+### Iterm Key Bindings
+Go to`Preference -> Profile -> Default -> Keys`
+
+Click "Import" on the Presets dropdown
+
+Import `path/to/dotfiles/configure/iterm_keyboard.itermkeymap`
+
 # Configure
 
 ## Git
