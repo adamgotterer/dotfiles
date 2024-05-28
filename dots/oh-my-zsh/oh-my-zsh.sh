@@ -210,10 +210,10 @@ done
 unset plugin
 
 # Load all of your custom configurations from custom/
-for config_file ("$ZSH_CUSTOM"/*.zsh(N)); do
-  source "$config_file"
-done
-unset config_file
+#for config_file ("$ZSH_CUSTOM"/*.zsh(N)); do
+  #source "$config_file"
+#done
+#unset config_file
 
 # Load the theme
 is_theme() {
