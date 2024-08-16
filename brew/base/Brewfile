@@ -57,6 +57,7 @@ brew "vim"
 brew "wifi-password"
 brew "flake8"
 brew "progress"
+brew "difftastic"
 
 cask "java"
 cask "appcleaner"
