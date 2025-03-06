@@ -106,6 +106,19 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
 
+" Map gp to auto select what was just pasted
+" Unmap any built-in mapping for gp
+if maparg('gp', 'n') !=# ''
+  unmap gp
+endif
+function! SelectPastedText()
+  " This command moves to the start of the last change,
+  " enters Visual mode, and then extends the selection
+  " to the end of the last change.
+  normal! `[v`]
+endfunction
+nnoremap <silent> gp :call SelectPastedText()<CR>
+
 " Insert pry debugging session
 augroup ruby
   au!
