@@ -17,6 +17,7 @@ set autoindent              	 " always set autoindenting on
 set tabstop=4               	 " <tab> inserts spaces
 set shiftwidth=4            	 " indent level
 set softtabstop=4          	     " <BS> over an autoindent deletes both spaces.
+set smartindent
 set expandtab              		 " Use spaces, not tabs, for autoindent/tab key.
 set shiftround             		 " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>       		 " show matching <> (html mainly) as well
@@ -28,6 +29,9 @@ set path=.,,** 					 " Always set the path to the current files directory
 set showmatch					 " Don't scroll the screen when matching brackets
 set incsearch					 " Highlight search terms dynamically as they are typed
 set hlsearch					 " Highlight search terms
+set exrc
+set secure
+set autochdir
 set ignorecase
 set smartcase
 set virtualedit=all
@@ -196,5 +200,22 @@ augroup MyColors
 augroup END
 
 colorscheme seti
+
+augroup LoadAnyLocalVimrc
+  autocmd!
+  " On every file open or new buffer…
+  autocmd BufReadPost,BufNewFile * nested call s:LoadLocalVimrc()
+augroup END
+
+" Load project level .vimrc files
+function! s:LoadLocalVimrc() abort
+  " Look upward from this file’s dir for a .vimrc
+  let l:local = findfile('.vimrc', expand('%:p:h') . ';')
+  " If we found one, and haven’t sourced it already for this buffer…
+  if !empty(l:local) && !exists('b:local_vimrc_sourced')
+    execute 'source ' . fnameescape(l:local)
+    let b:local_vimrc_sourced = 1
+  endif
+endfunction
 
 so ~/.vim/settings.vim
