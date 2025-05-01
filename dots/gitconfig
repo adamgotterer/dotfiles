@@ -15,7 +15,7 @@
     default = simple
 
 [core]
-    editor = /usr/local/bin/nvim
+    editor = /opt/homebrew/bin/vim
     quotepath = false
     pager = diff-so-fancy | less --tabs=1,5 -R
     excludesfile = ~/.gitignore_global
