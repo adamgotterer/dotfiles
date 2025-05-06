@@ -208,13 +208,26 @@ augroup LoadAnyLocalVimrc
 augroup END
 
 " Load project level .vimrc files
-function! s:LoadLocalVimrc() abort
-  " Look upward from this file’s dir for a .vimrc
+augroup LoadAnyLocalVimrc
+  autocmd!
+  " On buffer-open or new-file…
+  autocmd VimEnter,BufReadPost,BufNewFile * nested call LoadLocalVimrc()
+augroup END
+
+function! LoadLocalVimrc() abort
+  " Search upward for a .vimrc
   let l:local = findfile('.vimrc', expand('%:p:h') . ';')
-  " If we found one, and haven’t sourced it already for this buffer…
-  if !empty(l:local) && !exists('b:local_vimrc_sourced')
-    execute 'source ' . fnameescape(l:local)
-    let b:local_vimrc_sourced = 1
+  " Only proceed if:
+  " 1) we found one
+  " 2) it's NOT the same as our global $MYVIMRC
+  " 3) we haven't already sourced it in this buffer
+  if !empty(l:local)
+    let l:global = fnamemodify($MYVIMRC, ':p')
+    let l:found  = fnamemodify(l:local, ':p')
+    if l:found !=# l:global && !exists('b:local_vimrc_sourced')
+      execute 'source ' . fnameescape(l:found)
+      let b:local_vimrc_sourced = 1
+    endif
   endif
 endfunction
 
