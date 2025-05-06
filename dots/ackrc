@@ -45,3 +45,6 @@
 --ignore-file=ext:csv
 --ignore-file=ext:log
 --ignore-file=ext:tfstate
+
+--ignore-file=match:/[.-]min[.]js$/
+--ignore-file=match:/[.]js[.]min$
