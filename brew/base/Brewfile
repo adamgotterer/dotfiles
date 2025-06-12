@@ -12,6 +12,7 @@ brew "bash-completion@2"
 brew "cmake"
 brew "coreutils"
 brew "curl", args: ["with-openssl"]
+brew "direnv"
 brew "libevent"
 brew "pcre"
 brew "ctags"

@@ -31,7 +31,7 @@ set incsearch					 " Highlight search terms dynamically as they are typed
 set hlsearch					 " Highlight search terms
 set exrc
 set secure
-set autochdir
+set noautochdir
 set ignorecase
 set smartcase
 set virtualedit=all
@@ -88,12 +88,12 @@ nmap <Leader>w :set wrap!<cr>
 nmap <Leader>W :set nowrap<cr>
 
 " Move a line of text up or down
-"nnoremap <A-j> :m+<CR>==
-"nnoremap <A-k> :m-2<CR>==
-"inoremap <A-j> <Esc>:m+<CR>==gi
-"inoremap <A-k> <Esc>:m-2<CR>==gi
-"vnoremap <A-j> :m'>+<CR>gv=gv
-"vnoremap <A-k> :m-2<CR>gv=gv
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
 
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
@@ -124,14 +124,14 @@ function! SelectPastedText()
 endfunction
 nnoremap <silent> gp :call SelectPastedText()<CR>
 
-" Insert pry debugging session
+" Insert irb debugging session
 augroup ruby
   au!
-  au FileType ruby nnoremap <buffer> gy orequire 'pry-byebug'; binding.pry<ESC>^
-  au FileType ruby nnoremap <buffer> gY Orequire 'pry-byebug'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gy orequire 'irb'; binding.irb<ESC>^
+  au FileType ruby nnoremap <buffer> gY Orequire 'irb'; binding.irb<ESC>^
 augroup END
 
-" Insert pry debugging session
+" Insert runtime debugging session
 augroup go
   au!
   au FileType go nnoremap <buffer> gy oruntime.Breakpoint()<ESC>^
