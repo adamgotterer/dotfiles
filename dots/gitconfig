@@ -35,8 +35,6 @@
 [status]
     showUntrackedFiles = all
 
-[transfer]
-        fsckobjects = true
 
 [pull]
     rebase = true
