@@ -1,6 +1,6 @@
 " proper control character: X
 
-set nocompatible 				" don't be compatible with vi
+set nocompatible				" don't be compatible with vi
 
 " Load plugin path
 if filereadable(expand("~/.vim/plug.vim"))
@@ -8,24 +8,24 @@ if filereadable(expand("~/.vim/plug.vim"))
 endif
 
 filetype plugin indent on
-set nowrap                  	 " don't wrap text
+set nowrap			 " don't wrap text
 set formatoptions=l wrapmargin=0 " don't break text to a new line when it reaches the textwidth
-set textwidth=110           	 " Show a visual marker at 100 characters
-set colorcolumn=+0          	 " Set a visual marker at 100 characters
-set linebreak               	 " don't wrap textin the middle of a word
-set autoindent              	 " always set autoindenting on
-set tabstop=4               	 " <tab> inserts spaces
-set shiftwidth=4            	 " indent level
-set softtabstop=4          	     " <BS> over an autoindent deletes both spaces.
+set textwidth=110		 " Show a visual marker at 100 characters
+set colorcolumn=+0		 " Set a visual marker at 100 characters
+set linebreak			 " don't wrap textin the middle of a word
+set autoindent			 " always set autoindenting on
+set tabstop=4			 " <tab> inserts spaces
+set shiftwidth=4		 " indent level
+set softtabstop=4		     " <BS> over an autoindent deletes both spaces.
 set smartindent
-set expandtab              		 " Use spaces, not tabs, for autoindent/tab key.
-set shiftround             		 " rounds indent to a multiple of shiftwidth
-set matchpairs+=<:>       		 " show matching <> (html mainly) as well
+set expandtab				 " Use spaces, not tabs, for autoindent/tab key.
+set shiftround				 " rounds indent to a multiple of shiftwidth
+set matchpairs+=<:>			 " show matching <> (html mainly) as well
 set lazyredraw
 set ttyfast
-set backupcopy=yes          	 " Needed to get proper user ownership and syncing to Docker for things like gaurd
+set backupcopy=yes		 " Needed to get proper user ownership and syncing to Docker for things like gaurd
 set backspace=indent,eol,start
-set path=.,,** 					 " Always set the path to the current files directory
+set path=.,,**					 " Always set the path to the current files directory
 set showmatch					 " Don't scroll the screen when matching brackets
 set incsearch					 " Highlight search terms dynamically as they are typed
 set hlsearch					 " Highlight search terms
@@ -50,7 +50,7 @@ set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 set mouse=nicr					 " Enable mouse control in normal mode
 nnoremap <leader>gd <S-k>		 " Remap definition lookup since its fat fingered when navigating splits a lot
-set number                       " Show line numbers
+set number			 " Show line numbers
 set timeoutlen=1000 ttimeoutlen=0
 set iskeyword+=- " Allows words with dashes to be selected using #
 
@@ -82,6 +82,13 @@ augroup buffer_check
   au CursorMoved * if getcmdwintype() == '' | checktime | endif
   au CursorMovedI * if getcmdwintype() == '' | checktime | endif
 augroup END
+
+" on every save, convert tabs → spaces
+" DISABLED: its causing the redo to stop working
+"augroup SpacesOnly
+  "autocmd!
+  "autocmd BufWritePre * retab!
+"augroup END
 
 " Wrap toggling
 nmap <Leader>w :set wrap!<cr>
@@ -138,7 +145,7 @@ augroup go
   au FileType go nnoremap <buffer> gY Oruntime.Breakpoint()<ESC>^
 augroup END
 
-au BufNewFile,BufRead *.erb      set filetype=eruby
+au BufNewFile,BufRead *.erb	 set filetype=eruby
 au BufNewFile,BufRead *.html.erb set filetype=eruby
 
 " Insert visual debugging output
@@ -164,8 +171,8 @@ if !isdirectory(expand("~/.vim/.undo/"))
 endif
 
 set backupdir^=~/.vim/.backupdir//
-set directory^=~/.vim/.swap//                " where to put swap files
-set undodir^=~/.vim/.undo//                  " where to put undo files
+set directory^=~/.vim/.swap//		     " where to put swap files
+set undodir^=~/.vim/.undo//		     " where to put undo files
 
 " Resize the quick fix window
 augroup quickfixheight
@@ -185,13 +192,13 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 function! MyHighlights() abort
     " Selection Highlight
-    highlight Visual     cterm=NONE ctermbg=117 ctermfg=16 gui=NONE guibg=#5fd700 guifg=#000000
+    highlight Visual	 cterm=NONE ctermbg=117 ctermfg=16 gui=NONE guibg=#5fd700 guifg=#000000
 
     " Background color in the section after the text ends
-    highlight NonText    cterm=NONE ctermbg=NONE gui=NONE guibg=#00005f
+    highlight NonText	 cterm=NONE ctermbg=NONE gui=NONE guibg=#00005f
 
     " Search word highlight
-    hi Search            cterm=NONE ctermbg=yellow ctermfg=16 guifg=NONE guibg=NONE gui=underline
+    hi Search		 cterm=NONE ctermbg=yellow ctermfg=16 guifg=NONE guibg=NONE gui=underline
 endfunction
 
 augroup MyColors
