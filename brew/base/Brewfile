@@ -25,6 +25,7 @@ brew "fzf"
 brew "go"
 brew "gist"
 brew "gnu-sed", args: ["with-default-names"]
+brew "syntax-highlight", args: ["no-quarantine"]
 brew "jq"
 brew "pinentry"
 brew "gettext", link: true
@@ -53,7 +54,6 @@ brew "flake8"
 brew "progress"
 brew "difftastic"
 brew "bruno"
-
 cask "appcleaner"
 cask "blockblock"
 cask "divvy"

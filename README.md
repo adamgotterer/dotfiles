@@ -53,6 +53,10 @@ Go to preferences -> general -> Preferences
 Check "Load preferences from a custom folder or URL"
 Change the folder to Dotfiles/iterm
 
+## QuickLook
+Open /Applications/syntax-highlight.app one time to add it to the QuickLook extension.
+Open Settings -> Login Items & Extensions -> QuickLook  -- then enable Syntax0highlight
+
 # Tools
 Some tools that are installed
 
