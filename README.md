@@ -44,6 +44,23 @@ For local configuration settings create ~/.gitconfig.local
     signingkey =
 ```
 
+## Coding Agent github Machine Account
+Setup this alias to provide Claude Code (or any CLI coding tool) it's own GH account
+
+Create `~/.zsh_local`
+Set GH_TOKEN to a Github [Personal Access Token](https://github.com/settings/personal-access-tokens)
+
+```
+alias claude-analect='GIT_AUTHOR_NAME="Bot Name" \
+GIT_AUTHOR_EMAIL="bot@example.com" \
+GIT_COMMITTER_NAME="Bot Name" \
+GIT_COMMITTER_EMAIL="bot@example.com" \
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_bot -o IdentitiesOnly=yes" \
+GH_TOKEN="..." \
+claude'
+```
+
+
 ## SSH
 
 `sh configure/ssh.sh`
